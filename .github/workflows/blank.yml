@@ -1,4 +1,4 @@
-name: DHIKO
+name: RDPMINER2
 on:
   workflow_dispatch:
 jobs:
@@ -44,9 +44,9 @@ jobs:
           Add-LocalGroupMember -Group "Administrators" -Member "DHIKO"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "DHIKO"
           
-          echo "RDP_CREDS=User: DHIKO | Password: $password" >> $env:GITHUB_ENV
+          echo "RDP_CREDS=User: RDPMINER2 | Password: $password" >> $env:GITHUB_ENV
           
-          if (-not (Get-LocalUser -Name "DHIKO")) {
+          if (-not (Get-LocalUser -Name "RDPMINER2")) {
               Write-Error "User creation failed"
               exit 1
           }
